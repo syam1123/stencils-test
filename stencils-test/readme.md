@@ -14,7 +14,13 @@ Stencil combines the best concepts of the most popular frontend frameworks into 
 
 Stencil components are just Web Components, so they work in any major framework or with no framework at all.
 
-## Getting Started
+# Usage in other projects
+
+```
+<studio-form :is-loading="isStencilsComponentLoading" @formSubmitted="handleStudioFormSubmit"></studio-form>
+```
+
+## Local setup and adding new components
 
 To start building a new web component using Stencil, clone this repo to a new directory:
 

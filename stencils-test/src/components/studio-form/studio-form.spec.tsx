@@ -7,12 +7,6 @@ describe('studio-form', () => {
       components: [StudioForm],
       html: `<studio-form></studio-form>`,
     });
-    expect(page.root).toEqualHtml(`
-      <studio-form>
-        <mock:shadow-root>
-          <slot></slot>
-        </mock:shadow-root>
-      </studio-form>
-    `);
+    expect(page.root).toMatchSnapshot()
   });
 });
