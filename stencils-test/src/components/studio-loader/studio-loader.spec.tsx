@@ -1,18 +1,18 @@
 import { newSpecPage } from '@stencil/core/testing';
-import { TestComponent } from './test-component';
+import { StudioLoader } from './studio-loader';
 
-describe('test-component', () => {
+describe('studio-loader', () => {
   it('renders', async () => {
     const page = await newSpecPage({
-      components: [TestComponent],
-      html: `<test-component></test-component>`,
+      components: [StudioLoader],
+      html: `<studio-loader></studio-loader>`,
     });
     expect(page.root).toEqualHtml(`
-      <test-component>
+      <studio-loader>
         <mock:shadow-root>
           <slot></slot>
         </mock:shadow-root>
-      </test-component>
+      </studio-loader>
     `);
   });
 });

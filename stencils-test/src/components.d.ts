@@ -6,69 +6,54 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
-    interface MyComponent {
+    interface StudioForm {
         /**
-          * The first name
+          * Indicates loading state
          */
-        "first": string;
-        /**
-          * The last name
-         */
-        "last": string;
-        /**
-          * The middle name
-         */
-        "middle": string;
+        "isLoading": boolean;
     }
-    interface TestComponent {
+    interface StudioLoader {
     }
 }
 declare global {
-    interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
+    interface HTMLStudioFormElement extends Components.StudioForm, HTMLStencilElement {
     }
-    var HTMLMyComponentElement: {
-        prototype: HTMLMyComponentElement;
-        new (): HTMLMyComponentElement;
+    var HTMLStudioFormElement: {
+        prototype: HTMLStudioFormElement;
+        new (): HTMLStudioFormElement;
     };
-    interface HTMLTestComponentElement extends Components.TestComponent, HTMLStencilElement {
+    interface HTMLStudioLoaderElement extends Components.StudioLoader, HTMLStencilElement {
     }
-    var HTMLTestComponentElement: {
-        prototype: HTMLTestComponentElement;
-        new (): HTMLTestComponentElement;
+    var HTMLStudioLoaderElement: {
+        prototype: HTMLStudioLoaderElement;
+        new (): HTMLStudioLoaderElement;
     };
     interface HTMLElementTagNameMap {
-        "my-component": HTMLMyComponentElement;
-        "test-component": HTMLTestComponentElement;
+        "studio-form": HTMLStudioFormElement;
+        "studio-loader": HTMLStudioLoaderElement;
     }
 }
 declare namespace LocalJSX {
-    interface MyComponent {
+    interface StudioForm {
         /**
-          * The first name
+          * Indicates loading state
          */
-        "first"?: string;
-        /**
-          * The last name
-         */
-        "last"?: string;
-        /**
-          * The middle name
-         */
-        "middle"?: string;
+        "isLoading"?: boolean;
+        "onFormSubmitted"?: (event: CustomEvent<any>) => void;
     }
-    interface TestComponent {
+    interface StudioLoader {
     }
     interface IntrinsicElements {
-        "my-component": MyComponent;
-        "test-component": TestComponent;
+        "studio-form": StudioForm;
+        "studio-loader": StudioLoader;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
-            "test-component": LocalJSX.TestComponent & JSXBase.HTMLAttributes<HTMLTestComponentElement>;
+            "studio-form": LocalJSX.StudioForm & JSXBase.HTMLAttributes<HTMLStudioFormElement>;
+            "studio-loader": LocalJSX.StudioLoader & JSXBase.HTMLAttributes<HTMLStudioLoaderElement>;
         }
     }
 }
